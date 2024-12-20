@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剪刀石头布</title>
+    <style>
+        div{
+            text-align: center;
+            margin-top:400px;
+            
+        }
+        button{
+            width:200px;
+            height:60px;
+            font-size:20px;
+            padding:0px 30px 0px 30px;
+            background-color:rgb(255, 145, 0);
+            margin:10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+       
+        <button onclick="jsb(jiandao)  ">剪刀</button>&nbsp;&nbsp;
+        <button onclick="jsb(shitou)  ">石头</button>&nbsp;&nbsp;
+        <button onclick="jsb(bu) ">布</button>
+        
+        
+    </div>
+    <div style="text-align:left;margin-bottom:0px;"><p>版权所有：Thomas.sang 2024 微信：Wsssx1234  </p></div>
+    <script>
+        const jiandao = 3;
+        const shitou = 4;
+        const bu = 5;
+        // var pc=shuaxin();
+        
+        function shuaxin(){
+            pc=Math.random()*10;
+            return pc;
+        }
+
+        function pc1(pc){
+          
+                if(pc<=3){
+                return 3;
+                }else if(pc>3 && pc<7){
+                    return 4;
+                }else{
+                    return 5;
+                }
+                
+        }
+       
+        function jsb(x){
+            shuaxin();
+
+            if(x===jiandao){
+                if(pc1(shuaxin())===jiandao){
+                                alert("你出的剪刀，我出的剪刀，平局")
+                            }else if(pc1(shuaxin())===shitou){
+                                alert("你出的剪刀，我出的石头，你输了")
+                            }else{
+                                alert("你出的剪刀，我出的布，你赢了")
+                            }    
+            }else if(x===shitou){
+                if(pc1(shuaxin())===jiandao){
+                                alert("你出的石头，我出的剪刀，你赢了")
+                            }else if(pc1(shuaxin())===shitou){
+                                alert("你出的石头，我出的石头，平局")
+                            }else{
+                                alert("你出的石头，我出的布，你输了")
+                            } 
+            }else{
+                if(pc1(shuaxin())===jiandao){
+                                alert("你出的布，我出的剪刀，你输了")
+                            }else if(pc1(shuaxin())===shitou){
+                                alert("你出的布，我出的石头，你赢了")
+                            }else{
+                                alert("你出的布，我出的布，平局")
+                            } 
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
